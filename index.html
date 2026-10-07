@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>大學失物招領平台</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav-wrap">
+        <div class="brand">
+          <div class="brand-mark">🎓</div>
+          <div>
+            <p class="eyebrow">Campus Care</p>
+            <h1>失物招領平台</h1>
+          </div>
+        </div>
+        <nav class="nav">
+          <a href="#report">通報</a>
+          <a href="#map">地圖</a>
+          <a href="#feed">最新消息</a>
+        </nav>
+        <button class="nav-btn">立即通報</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <span class="badge">校園內失物快速協尋系統</span>
+            <h2>把「遺失」變成「找回」</h2>
+            <p>
+              讓拾獲者與失主能快速建立聯繫，並透過地圖標記遺失地點，提升校園失物回收效率。
+            </p>
+            <div class="cta-row">
+              <a href="#report" class="primary-btn">我要通報</a>
+              <a href="#map" class="secondary-btn">查看地圖</a>
+            </div>
+            <div class="stat-row">
+              <div>
+                <strong>1,284</strong>
+                <span>件已處理</span>
+              </div>
+              <div>
+                <strong>89%</strong>
+                <span>成功找回</span>
+              </div>
+              <div>
+                <strong>24h</strong>
+                <span>平均回覆</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-panel">
+            <div class="panel-card highlight-card">
+              <p>本週熱門失物</p>
+              <ul>
+                <li><span>📱</span> 手機</li>
+                <li><span>🎒</span> 書包</li>
+                <li><span>🧢</span> 帽子</li>
+              </ul>
+            </div>
+            <div class="panel-card mini-card">
+              <div class="mini-top">
+                <span class="dot success"></span>
+                <span>已領回</span>
+              </div>
+              <strong>14 件</strong>
+              <small>本週已完成認領</small>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="features container">
+        <div class="section-header">
+          <p class="eyebrow">功能亮點</p>
+          <h3>校園遺失物處理更快更明確</h3>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="icon">📍</div>
+            <h4>地圖標記</h4>
+            <p>依照校園建築、教室、餐廳與車站位置，快速判斷遺失範圍。</p>
+          </article>
+          <article class="feature-card">
+            <div class="icon">🧾</div>
+            <h4>拾獲者通報</h4>
+            <p>拾獲人可簡單填寫物品類型、發現地點、時間與聯絡資訊。</p>
+          </article>
+          <article class="feature-card">
+            <div class="icon">🔔</div>
+            <h4>失主通報</h4>
+            <p>失主可提交遺失資訊，系統自動比對相似物品與拾獲紀錄。</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="report" class="report-block">
+        <div class="container report-grid">
+          <div class="report-card">
+            <div class="card-head">
+              <span class="pill success">拾獲者通報</span>
+              <h3>我找到物品</h3>
+            </div>
+            <form id="foundForm">
+              <div class="field-row">
+                <label>
+                  物品名稱
+                  <input type="text" name="itemName" placeholder="例：白色手機殼" required />
+                </label>
+                <label>
+                  類別
+                  <select name="category" required>
+                    <option value="電子產品">電子產品</option>
+                    <option value="文具用品">文具用品</option>
+                    <option value="服飾配件">服飾配件</option>
+                    <option value="證件卡片">證件卡片</option>
+                    <option value="其他">其他</option>
+                  </select>
+                </label>
+              </div>
+              <div class="field-row">
+                <label>
+                  發現地點
+                  <input type="text" name="location" placeholder="例：圖書館一樓櫃台" required />
+                </label>
+                <label>
+                  發現時間
+                  <input type="datetime-local" name="time" required />
+                </label>
+              </div>
+              <label>
+                說明
+                <textarea name="description" rows="4" placeholder="請簡述物品特徵與保管狀況"></textarea>
+              </label>
+              <button type="submit" class="primary-btn full">送出拾獲通報</button>
+            </form>
+          </div>
+
+          <div class="report-card accent">
+            <div class="card-head">
+              <span class="pill warning">失主通報</span>
+              <h3>我遺失了物品</h3>
+            </div>
+            <form id="lostForm">
+              <div class="field-row">
+                <label>
+                  物品名稱
+                  <input type="text" name="itemName" placeholder="例：黑色筆電" required />
+                </label>
+                <label>
+                  類別
+                  <select name="category" required>
+                    <option value="電子產品">電子產品</option>
+                    <option value="文具用品">文具用品</option>
+                    <option value="服飾配件">服飾配件</option>
+                    <option value="證件卡片">證件卡片</option>
+                    <option value="其他">其他</option>
+                  </select>
+                </label>
+              </div>
+              <div class="field-row">
+                <label>
+                  遺失地點
+                  <input type="text" name="location" placeholder="例：工程館 302" required />
+                </label>
+                <label>
+                  遺失時間
+                  <input type="datetime-local" name="time" required />
+                </label>
+              </div>
+              <label>
+                物品特徵
+                <textarea name="description" rows="4" placeholder="請描述顏色、品牌、特殊特徵、聯絡方式"></textarea>
+              </label>
+              <button type="submit" class="secondary-btn full">送出失主通報</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section id="map" class="map-section container">
+        <div class="section-header left">
+          <p class="eyebrow">地圖定位</p>
+          <h3>遺失地點一目了然</h3>
+        </div>
+
+        <div class="map-layout">
+          <div class="campus-map" id="campusMap" aria-label="校園地圖">
+            <div class="building admin">行政大樓</div>
+            <div class="building lib">圖書館</div>
+            <div class="building sci">科學館</div>
+            <div class="building eng">工程館</div>
+            <div class="building cafe">學生餐廳</div>
+            <div class="building dorm">宿舍區</div>
+
+            <button class="marker marker-found" data-id="1" style="left: 26%; top: 38%;">📱</button>
+            <button class="marker marker-lost" data-id="2" style="left: 58%; top: 31%;">🧳</button>
+            <button class="marker marker-found" data-id="3" style="left: 68%; top: 70%;">🎒</button>
+            <button class="marker marker-lost" data-id="4" style="left: 42%; top: 64%;">🔑</button>
+          </div>
+
+          <aside class="map-detail" id="mapDetail">
+            <p class="eyebrow">地點資訊</p>
+            <h4 id="detailTitle">圖書館一樓櫃台</h4>
+            <div class="detail-meta">
+              <span id="detailType">拾獲</span>
+              <span id="detailStatus">待領回</span>
+            </div>
+            <p id="detailText">
+              白色手機殼，內含藍牙耳機，昨天晚上被同學撿到，已登記給失主查詢。
+            </p>
+            <ul id="detailList">
+              <li>物品：手機殼</li>
+              <li>時間：2026/10/06 19:00</li>
+              <li>地點：圖書館一樓櫃台</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section id="feed" class="feed container">
+        <div class="section-header left">
+          <p class="eyebrow">最新狀態</p>
+          <h3>近期失物與拾獲紀錄</h3>
+        </div>
+
+        <div class="feed-grid" id="itemFeed"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-wrap">
+        <p>Campus Lost & Found</p>
+        <span>讓每一件物品都能找到回家的路</span>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
